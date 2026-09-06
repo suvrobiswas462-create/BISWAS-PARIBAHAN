@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বিশ্বাস পরিবহন — ছোট ও বড় পণ্যবাহী গাড়ি এবং যাত্রীবাহী গাড়ি ভাড়ার নির্ভরযোগ্য পরিষেবা।">
+  <title>বিশ্বাস পরিবহন | নির্ভরযোগ্য গাড়ি ভাড়া পরিষেবা</title>
+  <style>
+    :root{
+      --primary:#0b4f8a;
+      --primary-dark:#07345c;
+      --accent:#f5b400;
+      --light:#f5f8fc;
+      --text:#17212b;
+      --muted:#5e6b78;
+      --white:#fff;
+      --shadow:0 10px 30px rgba(0,0,0,.09);
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,"Noto Sans Bengali","Nirmala UI",sans-serif;color:var(--text);background:#fff;line-height:1.7}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:1000;background:rgba(7,52,92,.96);
+      color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.15)
+    }
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:1.55rem;font-weight:800;letter-spacing:.2px}
+    .brand span{color:var(--accent)}
+    nav{display:flex;gap:24px;align-items:center}
+    nav a{font-weight:600;opacity:.95}
+    nav a:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:0;color:#fff;font-size:1.8rem}
+    .hero{
+      background:linear-gradient(135deg,rgba(7,52,92,.95),rgba(11,79,138,.86)),
+      radial-gradient(circle at 80% 20%,#f5b400,transparent 30%);
+      color:#fff;padding:92px 0 78px;overflow:hidden
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+    .badge{display:inline-block;background:rgba(245,180,0,.16);border:1px solid rgba(245,180,0,.5);color:#ffd15a;padding:7px 14px;border-radius:999px;margin-bottom:18px;font-weight:700}
+    h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.12;margin-bottom:18px}
+    .tagline{font-size:clamp(1.15rem,2vw,1.55rem);font-weight:700;color:#ffd15a;margin-bottom:18px}
+    .hero p{font-size:1.08rem;color:#e7eef6;max-width:650px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:10px;font-weight:800;transition:.2s}
+    .btn-primary{background:var(--accent);color:#1e1e1e}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .btn-outline{border:1px solid rgba(255,255,255,.55);color:#fff}
+    .btn-outline:hover{background:#fff;color:var(--primary)}
+    .hero-card{background:#fff;color:var(--text);padding:26px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card h3{color:var(--primary);font-size:1.35rem;margin-bottom:12px}
+    .contact-line{padding:10px 0;border-bottom:1px solid #e8edf2}
+    .contact-line:last-child{border-bottom:0}
+    .contact-line strong{display:block}
+    section{padding:78px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);color:var(--primary-dark);margin-bottom:8px}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:#fff;border:1px solid #e7edf3;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .icon{width:54px;height:54px;border-radius:14px;background:#eaf3fb;display:grid;place-items:center;font-size:1.7rem;margin-bottom:17px}
+    .card h3{margin-bottom:8px;color:var(--primary-dark)}
+    .card p{color:var(--muted)}
+    .about{background:var(--light)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+    .about-box{background:#fff;padding:32px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .about-box h2{font-size:2.3rem;color:var(--primary-dark);margin-bottom:15px}
+    .checklist{list-style:none;margin-top:18px}
+    .checklist li{margin:11px 0;color:#31404d}
+    .checklist li::before{content:"✓";color:#159447;font-weight:900;margin-right:10px}
+    .cta{background:linear-gradient(135deg,#07345c,#0b4f8a);color:#fff;text-align:center}
+    .cta h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:10px}
+    .cta p{color:#dce9f5;margin-bottom:22px}
+    .contact{background:var(--light)}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
+    .contact-card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .phone{font-size:1.25rem;font-weight:800;color:var(--primary);display:block;margin:10px 0}
+    .feedback-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px;align-items:start}
+    .rating-summary{background:linear-gradient(135deg,#07345c,#0b4f8a);color:#fff;border-radius:var(--radius);padding:30px;text-align:center}
+    .rating-number{font-size:3.6rem;font-weight:900;line-height:1.1}
+    .stars{color:#ffd15a;font-size:1.5rem;letter-spacing:3px}
+    .review-form input,.review-form textarea,.review-form select{
+      width:100%;padding:13px 14px;margin:7px 0 12px;border:1px solid #d8e0e8;border-radius:10px;font:inherit;background:#fff
+    }
+    .review-form textarea{min-height:115px;resize:vertical}
+    .reviews{margin-top:25px;display:grid;gap:14px}
+    .review{border:1px solid #e2e8ee;border-radius:14px;padding:18px;background:#fff}
+    .review-top{display:flex;justify-content:space-between;gap:10px}
+    .review .stars{font-size:1rem}
+    footer{background:#062b4a;color:#d9e6f1;padding:28px 0;text-align:center}
+    footer strong{color:#fff}
+    .floating{position:fixed;right:18px;bottom:18px;z-index:999;background:#159447;color:#fff;padding:13px 18px;border-radius:999px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.22)}
+    @media(max-width:800px){
+      nav{display:none;position:absolute;top:72px;left:0;right:0;background:#07345c;padding:18px 5%;flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}.menu{display:block}
+      .hero-grid,.about-grid,.contact-grid,.feedback-wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .hero{padding-top:65px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">বিশ্বাস <span>পরিবহন</span></a>
+    <button class="menu" aria-label="মেনু" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#home">হোম</a>
+      <a href="#services">আমরা যা প্রদান করি</a>
+      <a href="#about">আমাদের সম্পর্কে</a>
+      <a href="#feedback">গ্রাহকের মতামত</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">নির্ভরযোগ্য পরিবহন পরিষেবা</span>
+        <h1>বিশ্বাস পরিবহন</h1>
+        <div class="tagline">আমরা শুধু পণ্য বহন করিনা বহণ করি গ্রাহকের ভরসা</div>
+        <p>যেকোনো প্রয়োজনে ছোট ও বড় পণ্যবাহী গাড়ি এবং ৪ সিটার ও ৭ সিটার চারচাকা গাড়ি ভাড়ার সুবিধা। আপনার পণ্য ও যাত্রার জন্য সহজ, দ্রুত ও যত্নশীল পরিবহন পরিষেবা।</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="tel:8327883858">📞 এখনই কল করুন</a>
+          <a class="btn btn-outline" href="https://wa.me/918327883858" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>যোগাযোগ করুন</h3>
+        <div class="contact-line"><strong>ফোন</strong>8327883858</div>
+        <div class="contact-line"><strong>ফোন</strong>9679963764</div>
+        <div class="contact-line"><strong>WhatsApp</strong><a href="https://wa.me/918327883858" target="_blank" rel="noopener"> 8327883858</a></div>
+        <div class="contact-line"><strong>পরিষেবা</strong>পণ্য পরিবহন ও গাড়ি ভাড়া</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>আমরা যা প্রদান করি</h2>
+        <p>আপনার প্রয়োজন অনুযায়ী বিভিন্ন ধরনের পরিবহন ও গাড়ি ভাড়ার সুবিধা।</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">🚚</div><h3>পণ্যবাহী গাড়ি</h3><p>ছোট ও বড় পণ্য পরিবহনের জন্য বিভিন্ন ধরনের গাড়ি ভাড়ার সুবিধা।</p></article>
+        <article class="card"><div class="icon">🚗</div><h3>৪ সিটার গাড়ি</h3><p>ছোট পরিবার বা ব্যক্তিগত যাত্রার জন্য ৪ সিটার চারচাকা গাড়ি।</p></article>
+        <article class="card"><div class="icon">🚙</div><h3>৭ সিটার গাড়ি</h3><p>পরিবার বা দলের যাত্রার জন্য ৭ সিটার চারচাকা গাড়ি ভাড়ার সুবিধা।</p></article>
+        <article class="card"><div class="icon">📦</div><h3>পণ্য পরিবহন</h3><p>আপনার মূল্যবান পণ্য নিরাপদে ও যত্নের সঙ্গে গন্তব্যে পৌঁছানোর জন্য পরিবহন পরিষেবা।</p></article>
+        <article class="card"><div class="icon">⏱️</div><h3>সময়মতো পরিষেবা</h3><p>আপনার সময়ের গুরুত্বকে অগ্রাধিকার দিয়ে পরিষেবা দেওয়ার চেষ্টা করি।</p></article>
+        <article class="card"><div class="icon">🤝</div><h3>বিশ্বাসযোগ্য পরিষেবা</h3><p>গ্রাহকের আস্থা ও সন্তুষ্টিকে সামনে রেখে পরিষেবা প্রদান আমাদের লক্ষ্য।</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div class="about-box">
+        <h2>কেন বিশ্বাস পরিবহন?</h2>
+        <p>আপনার পণ্য বা যাত্রার প্রয়োজন অনুযায়ী উপযুক্ত গাড়ি বেছে নেওয়ার সুবিধা এবং সহজ যোগাযোগের ব্যবস্থা।</p>
+        <ul class="checklist">
+          <li>ছোট ও বড় পণ্য পরিবহনের সুবিধা</li>
+          <li>৪ সিটার ও ৭ সিটার গাড়ি ভাড়া</li>
+          <li>সহজ ফোন ও WhatsApp যোগাযোগ</li>
+          <li>গ্রাহকের সন্তুষ্টিকে গুরুত্ব</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-head" style="text-align:left;margin:0">
+          <h2>আমাদের অঙ্গীকার</h2>
+          <p>আপনার প্রয়োজনকে গুরুত্ব দিয়ে নির্ভরযোগ্য পরিবহন পরিষেবা দেওয়াই আমাদের লক্ষ্য।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <div class="container">
+      <div class="section-head">
+        <h2>গ্রাহকের মতামত ও রেটিং</h2>
+        <p>আপনার অভিজ্ঞতা আমাদের আরও ভালো পরিষেবা দিতে সাহায্য করবে।</p>
+      </div>
+      <div class="feedback-wrap">
+        <div class="rating-summary">
+          <div class="rating-number" id="avgRating">5.0</div>
+          <div class="stars">★★★★★</div>
+          <p id="ratingCount">এখনও কোনো রিভিউ নেই — আপনার মতামত প্রথমটি হতে পারে!</p>
+        </div>
+        <div class="card review-form">
+          <h3>আপনার মতামত দিন</h3>
+          <input id="reviewerName" type="text" placeholder="আপনার নাম" maxlength="60">
+          <select id="reviewRating" aria-label="রেটিং">
+            <option value="5">★★★★★ — ৫/৫</option>
+            <option value="4">★★★★☆ — ৪/৫</option>
+            <option value="3">★★★☆☆ — ৩/৫</option>
+            <option value="2">★★☆☆☆ — ২/৫</option>
+            <option value="1">★☆☆☆☆ — ১/৫</option>
+          </select>
+          <textarea id="reviewText" placeholder="আপনার অভিজ্ঞতা লিখুন..." maxlength="500"></textarea>
+          <button class="btn btn-primary" style="border:0;cursor:pointer;width:100%" onclick="submitReview()">রিভিউ জমা দিন</button>
+          <div class="reviews" id="reviews"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>গাড়ি বা পরিবহন প্রয়োজন?</h2>
+      <p>আজই যোগাযোগ করুন — আপনার প্রয়োজন অনুযায়ী গাড়ির ব্যবস্থা নিয়ে কথা বলুন।</p>
+      <a class="btn btn-primary" href="tel:8327883858">📞 8327883858</a>
+      <a class="btn btn-outline" href="tel:9679963764">📞 9679963764</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>যোগাযোগ</h2>
+        <p>বুকিং বা বিস্তারিত জানতে ফোন অথবা WhatsApp-এ যোগাযোগ করুন।</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>ফোন নম্বর</h3>
+          <a class="phone" href="tel:8327883858">📞 8327883858</a>
+          <a class="phone" href="tel:9679963764">📞 9679963764</a>
+        </div>
+        <div class="contact-card">
+          <h3>WhatsApp</h3>
+          <p>দ্রুত যোগাযোগের জন্য WhatsApp-এ মেসেজ করুন।</p>
+          <a class="btn btn-primary" style="margin-top:15px" href="https://wa.me/918327883858" target="_blank" rel="noopener">💬 WhatsApp-এ মেসেজ করুন</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="floating" href="https://wa.me/918327883858" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+<footer>
+  <div class="container">
+    <p><strong>বিশ্বাস পরিবহন</strong> — আমরা শুধু পণ্য বহন করিনা বহণ করি গ্রাহকের ভরসা</p>
+    <p>© <span id="year"></span> বিশ্বাস পরিবহন. সর্বস্বত্ব সংরক্ষিত।</p>
+  </div>
+</footer>
+
+<script>
+  const STORAGE_KEY = "biswasParibahanReviews";
+
+  function loadReviews(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+    catch(e){ return []; }
+  }
+
+  function saveReviews(reviews){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+  }
+
+  function renderReviews(){
+    const reviews = loadReviews();
+    const box = document.getElementById("reviews");
+    box.innerHTML = "";
+
+    if(!reviews.length){
+      document.getElementById("avgRating").textContent = "5.0";
+      document.getElementById("ratingCount").textContent = "এখনও কোনো রিভিউ নেই — আপনার মতামত প্রথমটি হতে পারে!";
+      return;
+    }
+
+    const avg = reviews.reduce((sum,r)=>sum + Number(r.rating),0) / reviews.length;
+    document.getElementById("avgRating").textContent = avg.toFixed(1);
+    document.getElementById("ratingCount").textContent = `${reviews.length}টি গ্রাহক রিভিউ`;
+
+    reviews.slice().reverse().forEach(r=>{
+      const el = document.createElement("div");
+      el.className = "review";
+      const stars = "★".repeat(Number(r.rating)) + "☆".repeat(5-Number(r.rating));
+      el.innerHTML = `<div class="review-top"><strong>${escapeHtml(r.name)}</strong><span class="stars">${stars}</span></div><p>${escapeHtml(r.text)}</p>`;
+      box.appendChild(el);
+    });
+  }
+
+  function submitReview(){
+    const name = document.getElementById("reviewerName").value.trim();
+    const rating = document.getElementById("reviewRating").value;
+    const text = document.getElementById("reviewText").value.trim();
+
+    if(!name || !text){
+      alert("অনুগ্রহ করে আপনার নাম ও মতামত লিখুন।");
+      return;
+    }
+
+    const reviews = loadReviews();
+    reviews.push({name, rating, text});
+    saveReviews(reviews);
+
+    document.getElementById("reviewerName").value = "";
+    document.getElementById("reviewText").value = "";
+    renderReviews();
+    alert("আপনার রিভিউ জমা হয়েছে। ধন্যবাদ!");
+  }
+
+  function escapeHtml(value){
+    return value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  renderReviews();
+</script>
+</body>
+</html>
